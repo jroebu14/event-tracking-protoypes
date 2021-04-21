@@ -12,15 +12,19 @@ const useImpression = () => {
   });
 
   useEffect(() => {
+    let timeout;
+
     if (inView) {
-      const timeoutId = setTimeout(() => {
-        if (!viewSent && inView) {
+      timeout = setTimeout(() => {
+        if (!viewSent) {
           setViewSent(true);
           console.log('EVENT TRACKED!');
         }
       }, VIEWED_DURATION_MS);
 
-      return () => clearTimeout(timeoutId);
+      return () => clearTimeout(timeout);
+    } else {
+      clearTimeout(timeout);
     }
   }, [inView, viewSent]);
 
