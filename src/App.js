@@ -1,21 +1,25 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import PlaceholderText from './PlaceholderText';
+
+import Home from './pages/Home';
+import ExamplePageOne from './pages/ExamplePageOne';
+import ExamplePageTwo from './pages/ExamplePageTwo';
 
 function App() {
   return (
-    <div className="wrapper">
-      <div className="wrapper">
-        <PlaceholderText />
-        <div className="ad"></div>
-        <PlaceholderText />
-        <div className="ad"></div>
-        <PlaceholderText />
-
-        <div className="ad"></div>
-        <div className="ad"></div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/example-page-1">
+          <ExamplePageOne />
+        </Route>
+        <Route path="/example-page-2">
+          <ExamplePageTwo />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
