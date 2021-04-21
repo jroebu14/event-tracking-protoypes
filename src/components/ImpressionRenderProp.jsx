@@ -22,7 +22,7 @@ const ImpressionRenderProp = ({ children: render }) => {
 
       return () => clearTimeout(timeoutId);
     }
-  }, [inView]);
+  }, [inView, viewSent]);
 
   return render({
     trackRef: ref,
