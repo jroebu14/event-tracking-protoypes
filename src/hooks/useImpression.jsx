@@ -20,11 +20,11 @@ const useImpression = () => {
           console.log('EVENT TRACKED!');
         }
       }, VIEWED_DURATION_MS);
-
-      return () => clearTimeout(timeoutRef.current);
     } else {
       clearTimeout(timeoutRef.current);
     }
+
+    return () => clearTimeout(timeoutRef.current);
   }, [inView, viewSent]);
 
   return { trackRef: ref };
