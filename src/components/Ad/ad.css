@@ -1,0 +1,8 @@
+.ad {
+  height: 500px;
+  background: hotpink;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
