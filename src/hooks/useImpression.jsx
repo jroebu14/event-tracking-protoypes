@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 // Polyfill IntersectionObsesrver, e.g. for IE11
 import 'intersection-observer';
@@ -6,25 +6,24 @@ import 'intersection-observer';
 const VIEWED_DURATION_MS = 1000;
 
 const useImpression = () => {
+  const timeoutRef = useRef();
   const [viewSent, setViewSent] = useState(false);
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
 
   useEffect(() => {
-    let timeout;
-
     if (inView) {
-      timeout = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         if (!viewSent) {
           setViewSent(true);
           console.log('EVENT TRACKED!');
         }
       }, VIEWED_DURATION_MS);
 
-      return () => clearTimeout(timeout);
+      return () => clearTimeout(timeoutRef.current);
     } else {
-      clearTimeout(timeout);
+      clearTimeout(timeoutRef.current);
     }
   }, [inView, viewSent]);
 
