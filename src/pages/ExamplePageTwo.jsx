@@ -1,7 +1,7 @@
 import React from 'react';
 import PlaceholderText from '../components/PlaceholderText';
-import Ad from '../components/Ad';
 import AdRenderPropImpressions from '../components/AdRenderPropImpressions';
+import AdHookImpressions from '../components/AdHookImpressions';
 
 const ExamplePageTwo = () => (
   <div className="wrapper">
@@ -10,11 +10,14 @@ const ExamplePageTwo = () => (
     <AdRenderPropImpressions />
 
     <PlaceholderText />
-    <AdRenderPropImpressions />
+    <AdHookImpressions />
 
     <PlaceholderText />
     <AdRenderPropImpressions />
     <PlaceholderText />
+
+    <PlaceholderText />
+    <AdHookImpressions />
   </div>
 );
 
