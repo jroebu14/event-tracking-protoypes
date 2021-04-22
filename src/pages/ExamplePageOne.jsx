@@ -1,18 +1,14 @@
 import React from 'react';
 import PlaceholderText from '../components/PlaceholderText';
-import Ad from '../components/Ad';
+import Button from '../components/Button';
+import Link from '../components/Link';
 
 const ExamplePageOne = () => (
   <div className="wrapper">
     <h1>Example page one</h1>
+    <Link />
     <PlaceholderText />
-    <Ad />
-    <PlaceholderText />
-    <Ad />
-    <PlaceholderText />
-    <Ad />
-    <PlaceholderText />
-    <Ad />
+    <Button />
   </div>
 );
 
