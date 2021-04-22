@@ -1,23 +1,23 @@
 import React from 'react';
 import PlaceholderText from '../components/PlaceholderText';
-import AdRenderPropImpressions from '../components/AdRenderPropImpressions';
-import AdHookImpressions from '../components/AdHookImpressions';
+import AdWithImpressionRenderProp from '../components/AdWithImpressionRenderProp';
+import AdWithImpressionHook from '../components/AdWithImpressionHook';
 
 const ExamplePageTwo = () => (
   <div className="wrapper">
     <h1>Example page one</h1>
     <PlaceholderText />
-    <AdRenderPropImpressions />
+    <PlaceholderText />
+    <AdWithImpressionRenderProp />
 
     <PlaceholderText />
-    <AdHookImpressions />
+    <AdWithImpressionRenderProp />
 
     <PlaceholderText />
-    <AdRenderPropImpressions />
-    <PlaceholderText />
+    <AdWithImpressionHook />
 
     <PlaceholderText />
-    <AdHookImpressions />
+    <AdWithImpressionHook />
   </div>
 );
 
