@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './ad.css';
 
-const ExamplePageOne = () => <div className="ad">ADVERTISEMENT</div>;
+const Ad = forwardRef((props, ref) => (
+  <div ref={ref} className="ad">
+    ADVERTISEMENT
+  </div>
+));
 
-export default ExamplePageOne;
+export default Ad;
